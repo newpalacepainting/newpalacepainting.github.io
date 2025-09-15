@@ -1,0 +1,26 @@
+{{ define "main" }}
+    {{ partial "hero.html" . }}
+    <div class="container">
+        <div id="about" class="py-5">
+            {{ partial "about.html" . }}
+        </div>
+        <div id="services" class="py-5">
+            {{ partial "services.html" . }}
+        </div>
+        <div id="process" class="py-5">
+            {{ partial "process.html" . }}
+        </div>
+        <div id="gallery" class="py-5">
+            {{ partial "gallery.html" . }}
+        </div>
+        <div id="testimonials" class="py-5">
+            {{ partial "testimonials.html" . }}
+        </div>
+        <div id="partnership" class="py-5">
+            {{ partial "partnership.html" . }}
+        </div>
+        <div id="contact" class="py-5">
+            {{ partial "contact.html" . }}
+        </div>
+    </div>
+{{ end }}

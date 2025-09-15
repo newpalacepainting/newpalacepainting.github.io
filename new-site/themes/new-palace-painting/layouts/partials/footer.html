@@ -1,0 +1,12 @@
+<footer class="bg-dark text-white text-center p-3">
+    <div class="container">
+        <p>&copy; {{ now.Format "2006" }} {{ .Site.Title }}. All Rights Reserved.</p>
+        <p>
+            <a href="mailto:{{ .Site.Params.contact.email }}">{{ .Site.Params.contact.email }}</a> |
+            <a href="tel:{{ .Site.Params.contact.phone }}">{{ .Site.Params.contact.phone }}</a>
+        </p>
+        <p>
+            <a href="{{ .Site.Params.social.facebook }}" target="_blank">Facebook</a>
+        </p>
+    </div>
+</footer>

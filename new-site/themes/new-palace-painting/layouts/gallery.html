@@ -1,0 +1,14 @@
+{{ define "main" }}
+<div class="container">
+    <h1>{{ .Title }}</h1>
+    <div class="row baguette-gallery">
+        {{ range .Site.Data.gallery }}
+        <div class="col-md-4 mb-4">
+            <a href="{{ .image | relURL }}" class="baguette-item">
+                <img src="{{ .image | relURL }}" class="gallery-img" alt="{{ .caption }}">
+            </a>
+        </div>
+        {{ end }}
+    </div>
+</div>
+{{ end }}

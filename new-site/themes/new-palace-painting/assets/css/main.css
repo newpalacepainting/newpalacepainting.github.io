@@ -1,0 +1,43 @@
+
+body {
+  color: #222;
+  font-family: sans-serif;
+  line-height: 1.5;
+}
+
+header {
+  border-bottom: 1px solid #222;
+  margin-bottom: 1rem;
+}
+
+footer {
+  border-top: 1px solid #222;
+  margin-top: 1rem;
+}
+
+a {
+  color: #00e;
+  text-decoration: none;
+}
+
+
+.gallery-img {
+  width: 100%; /* Ensures the image fills the container */
+  height: 150px; /* Set a fixed height for uniformity */
+  object-fit: cover; /* Crops and maintains aspect ratio */
+  border-radius: 5px; /* Optional: adds smooth edges */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
+  transition: transform 0.2s, box-shadow 0.2s; /* Smooth hover effect */
+}
+
+.gallery-img:hover {
+  transform: scale(1.05); /* Slight zoom on hover */
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3); /* Enhance shadow on hover */
+}
+
+.blockquote-footer
+{
+  margin-top: 1rem;
+  padding-top: 0.2rem;
+  margin-bottom: 0;
+}

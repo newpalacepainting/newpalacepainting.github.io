@@ -1,0 +1,148 @@
+-bootstrap
+-homepage:
+most content is in home page
+large rotating 4 images with convincing text
+information about business see below
+and other pages as below
+
+-The pages will be generated with HUGO documentation available here: https://gohugo.io/documentation/
+
+House Painting
+1600 clay street, Detroit, MI, United States, Michigan
+(248) 216-3355
+newpalacepainting@gmail.com
+https://www.facebook.com/profile.php?id=61554790547196
+
+a Short headline (1 line) — good for overlay on the image;
+
+a Medium caption (1–2 short sentences) — sits under the photo;
+
+a Long blurb (2–4 sentences) — for a section expand or “read more”;
+
+a Photo suggestion so you can pick an image that matches the copy.
+
+You can paste any of these directly into the designer’s text fields.
+
+Hero / Top of Home page
+
+Short: Interior finishes that feel like home.
+Medium: Custom interior painting across Oakland County & Metro Detroit — precision, protection, and Sherwin-Williams quality.
+Long: New Palace Painting specializes in custom interior work built to last. Since 2020 we’ve combined decade-long experience with premium Sherwin-Williams paints to deliver even, durable finishes and carefully protected homes. We provide in-person estimates and clear timelines so you always know what to expect.
+Photo suggestion: Warm living room after paint refresh — soft, natural light, visible trim & crown molding.
+
+About / Who we are
+
+Short: Local. Experienced. Detail-driven.
+Medium: Owned and operated in Metro Detroit — 10 years of painting experience, company established 2020.
+Long: Owner-run New Palace Painting brings ten years of hands-on painting expertise to every job. We focus on interior, custom work and pride ourselves on thorough prep, full property protection, and a workmanship warranty that gives homeowners confidence. We serve Oakland County and the greater Metro Detroit area.
+Photo suggestion: Portrait of owner with a paint brush or a two-shot of crew in front of a completed interior.
+
+Services — Interior Painting
+
+Short: Interior painting, meticulously applied.
+Medium: Walls, ceilings, trim and details — flawless coverage, clean lines and minimal disruption.
+Long: Whether you’re refreshing a single room or redoing an entire home, our team uses proven prep and painting techniques to achieve smooth, consistent results. We pair expert application with Sherwin-Williams products to match your vision and ensure longevity. Free, in-person estimates get every job started right.
+Photo suggestion: Painter rolling a wall, crisp edge between wall and trim.
+
+Services — Custom Trim & Molding
+
+Short: Trim & molding that elevates the space.
+Medium: Clean, crisp paint on baseboards, crown molding and built-in details.
+Long: Custom trim is where a paint job becomes a finish. We pay special attention to miters, joints and transitions so trim reads perfectly against walls and ceilings. The result: a refined, high-end look that complements your home’s architecture.
+Photo suggestion: Close-up of freshly painted crown molding or window casing.
+
+Services — Cabinet Refinishing
+
+Short: New look for your kitchen without the remodel.
+Medium: Cabinet painting & refinishing for a modern, durable finish.
+Long: Give cabinets a fresh, professional surface with our cabinet refinishing services — sanding, priming, and multi-coat finishes that stand up to daily use. It’s an affordable way to transform a kitchen or bathroom without the cost of replacement.
+Photo suggestion: Before/after kitchen cabinet shot (same angle) or a close-up of painted shaker door.
+
+Services — Color Consultation
+
+Short: Not sure which color? We’ll help.
+Medium: Expert color guidance to match lighting, décor and your goals.
+Long: Choosing the right color can change how a room feels. We offer practical color consultation — considering natural light, furnishings and flow — and can coordinate directly with Sherwin-Williams resources to find the perfect palette.
+Photo suggestion: Swatches and sample boards held against a wall in a room.
+
+Services — Drywall Repair & Prep
+
+Short: Smooth walls start here.
+Medium: Expert drywall repair, skim coats and professional prep for flawless paint.
+Long: Proper prep is essential for long-lasting results. We handle drywall patching, sanding, and level-up finishes so paint lays down evenly and looks seamless. Our prep-focused approach reduces callbacks and extends the life of the finish.
+Photo suggestion: Worker performing skim coat or sanding a patched wall.
+
+Our Process (short steps)
+
+Short: Estimate → Prep → Paint → Clean → Warranty
+Medium: Transparent timeline and careful protection from day one to the final walkthrough.
+Long: Every project begins with a free, in-person estimate and a clear scope of work. We protect floors and furniture, repair and prime surfaces, apply the right Sherwin-Williams products and finish with a meticulous clean and walkthrough. We stand behind our work with a workmanship warranty for your peace of mind.
+Photo suggestion: Sequence collage — estimator meeting a homeowner, drop cloths, painting, final walkthrough.
+
+Gallery captions (room-by-room — pick whichever fits the photo)
+
+Living Room
+Short: Cozy, contemporary living room refresh.
+Medium: Warm neutrals and crisp trim bring this family room back to life.
+Long: A neutral wall palette and brightened trim transform the room into a brighter, more inviting space while keeping the family’s existing decor intact. Perfect execution of lines and finishes makes the space feel new.
+Photo suggestion: Finished living room, sofa visible, natural light.
+
+Master Bedroom
+Short: A restful retreat.
+Medium: Soothing tones and precise edges for a restful master suite.
+Long: We matched paint sheen and color to create a calm, cohesive master bedroom — careful cutting-in at ceilings and trim keeps the lines clean and professional.
+Photo suggestion: Serene bedroom, bed visible, calm color.
+
+Kitchen
+Short: Kitchen facelift — no demo required.
+Medium: Fresh cabinets and trim give this kitchen a modern, clean look.
+Long: Cabinet refinishing plus wall refresh created a cohesive kitchen update with minimal downtime. Durable finishes stand up to regular use and are easy to maintain.
+Photo suggestion: Bright kitchen, painted cabinets, visible hardware.
+
+Bathroom
+Short: Moisture-resistant finishes for bathrooms.
+Medium: Proper prep and paint selection for bathrooms keeps surfaces looking great longer.
+Long: We use recommended products and finishes for moisture-prone rooms and ensure ventilation and prep are correct to minimize peeling or mildew concerns.
+Photo suggestion: Recently painted bathroom, vanity and mirror visible.
+
+Testimonials / Reviews box
+
+Short: “On time, clean and flawless finish.” — Local homeowner
+Medium: Real customers praise our attention to detail, communication and cleanup.
+Long: Our clients consistently mention punctuality, thorough protection of their homes, and finishes that hold up over time. We treat every home as if it were our own — from prep to final walkthrough.
+Photo suggestion: Smiling homeowner in front of a painted room, or a quote card over a soft background.
+
+Sherwin-Williams & Materials
+
+Short: We use Sherwin-Williams premium paints.
+Medium: Trusted, long-lasting products specified for each space.
+Long: We specify Sherwin-Williams products because they offer excellent coverage, durability and color consistency. We match sheen and formulas to each room’s needs — from low-VOC options for occupied homes to tougher finishes for high-traffic areas.
+Photo suggestion: Sherwin-Williams paint cans and color deck or painter opening a can.
+
+Warranty & Promise
+
+Short: Workmanship warranty for peace of mind.
+Medium: We stand behind our work with a clear, honest warranty and final walkthrough.
+Long: Every job includes a workmanship warranty so you know we’ll return to address any issues that fall under our responsibility. We complete a final walkthrough with you to ensure the result meets your expectations.
+Photo suggestion: Handshake between painter and homeowner in a finished room.
+
+Service Area / Contact CTA
+
+Short: Serving Oakland County & Metro Detroit.
+Medium: Free in-person estimates across Oakland County, Bloomfield, Troy, Rochester Hills and nearby communities.
+Long: Based in Oakland County, New Palace Painting travels throughout Metro Detroit for interior projects. Contact us today to schedule a free, no-obligation estimate and get a personal timeline and written scope of work.
+Photo suggestion: Map graphic with service area highlighted or a friendly team photo.
+
+Quick designer tips (to pass at your meeting)
+
+Use one short headline over images (large, bold) and the medium caption underneath — long blurbs live on the interior pages or “read more” toggles.
+
+For gallery grids, use the short + medium pair only — visitors skim images quickly.
+
+Keep consistent voice: confident, local, detail-oriented. Avoid jargon; lead with benefits (protected home, warranty, Sherwin-Williams, free in-person estimate). Competitors commonly highlight those things.
+
+
+
+reviews:
+- Justin did an incredible job covering up a very dark red paint in our home with no problem. He was extremely personable, timely, efficient, and kind. I would recommend him to anyone!
+- Justin did a great job for us! He painted our whole finished basement and upstairs bungalow bedroom. Very tidy, attention to detail and gives great suggestions.

@@ -1,0 +1,24 @@
+baseURL = 'https://example.org/'
+languageCode = 'en-us'
+title = 'New Palace Painting'
+theme = 'new-palace-painting'
+
+[params]
+  author = "New Palace Painting"
+  description = "Custom interior painting across Oakland County & Metro Detroit — precision, protection, and Sherwin-Williams quality."
+  [params.contact]
+    email = "newpalacepainting@gmail.com"
+    phone = "(248) 216-3355"
+    address = "1600 clay street, Detroit, MI, United States, Michigan"
+  [params.social]
+    facebook = "https://www.facebook.com/profile.php?id=61554790547196"
+
+[menus]
+  [[menus.main]]
+    name = "Home"
+    pageRef = "/"
+    weight = 10
+  [[menus.main]]
+    name = "Gallery"
+    pageRef = "/gallery"
+    weight = 20
