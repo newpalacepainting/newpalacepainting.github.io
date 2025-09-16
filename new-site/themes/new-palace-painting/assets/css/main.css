@@ -11,8 +11,9 @@ header {
 }
 
 footer {
-  border-top: 1px solid #222;
+  border-top: 1px solid gray;
   margin-top: 1rem;
+  color: gray;
 }
 
 a {
