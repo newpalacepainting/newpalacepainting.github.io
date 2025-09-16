@@ -1,12 +1,12 @@
 <footer class="bg-dark text-white text-center p-3">
-    <div class="container">
+    <div class="container text-white-50">
         <p>&copy; {{ now.Format "2006" }} {{ .Site.Title }}. All Rights Reserved.</p>
         <p>
-            <a href="mailto:{{ .Site.Params.contact.email }}">{{ .Site.Params.contact.email }}</a> |
-            <a href="tel:{{ .Site.Params.contact.phone }}">{{ .Site.Params.contact.phone }}</a>
+            <a href="mailto:{{ .Site.Params.contact.email }}" class="text-white-50">{{ .Site.Params.contact.email }}</a> |
+            <a href="tel:{{ .Site.Params.contact.phone }}" class="text-white-50">{{ .Site.Params.contact.phone }}</a>
         </p>
         <p>
-            <a href="{{ .Site.Params.social.facebook }}" target="_blank">Facebook</a>
+            <a href="{{ .Site.Params.social.facebook }}" target="_blank" class="text-white-50">Visit us at Facebook</a>
         </p>
     </div>
 </footer>
