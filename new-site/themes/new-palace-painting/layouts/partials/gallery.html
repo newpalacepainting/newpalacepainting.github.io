@@ -1,33 +1,14 @@
 <h2>Gallery</h2>
 <div class="row baguette-gallery">
-    <div class="col-md-4 mb-4">
-        <a href="{{ "images/gallery-1.webp" | relURL }}">
-            <img src="{{ "images/gallery-1.webp" | relURL }}" class="img-fluid" alt="Gallery Image 1">
-        </a>
-    </div>
-    <div class="col-md-4 mb-4">
-        <a href="{{ "images/gallery-2.webp" | relURL }}">
-            <img src="{{ "images/gallery-2.webp" | relURL }}" class="img-fluid" alt="Gallery Image 2">
-        </a>
-    </div>
-    <div class="col-md-4 mb-4">
-        <a href="{{ "images/gallery-3.webp" | relURL }}">
-            <img src="{{ "images/gallery-3.webp" | relURL }}" class="img-fluid" alt="Gallery Image 3">
-        </a>
-    </div>
-    <div class="col-md-4 mb-4">
-        <a href="{{ "images/gallery-4.webp" | relURL }}">
-            <img src="{{ "images/gallery-4.webp" | relURL }}" class="img-fluid" alt="Gallery Image 4">
-        </a>
-    </div>
-    <div class="col-md-4 mb-4">
-        <a href="{{ "images/gallery-5.webp" | relURL }}">
-            <img src="{{ "images/gallery-5.webp" | relURL }}" class="img-fluid" alt="Gallery Image 5">
-        </a>
-    </div>
-    <div class="col-md-4 mb-4">
-        <a href="{{ "images/gallery-6.webp" | relURL }}">
-            <img src="{{ "images/gallery-6.webp" | relURL }}" class="img-fluid" alt="Gallery Image 6">
-        </a>
-    </div>
+        {{ range .Site.Data.frontpagegallery }}
+        <div class="col-md-4 mb-4">
+            {{ $img := resources.Get .image }}
+            {{ with $img }}
+                {{ $thumb := .Fill "300x300 Center" }}
+                <a href="{{ .RelPermalink }}" class="baguette-item">
+                    <img src="{{ $thumb.RelPermalink }}" class="gallery-img" style="height: 300px">
+                </a>
+            {{ end }}
+        </div>
+        {{ end }}
 </div>

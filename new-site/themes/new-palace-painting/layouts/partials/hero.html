@@ -1,14 +1,11 @@
-<div id="hero" class="carousel slide"  data-bs-ride="true">
+<div id="hero" class="carousel slide carousel-fade" data-bs-ride="carousel">
     <div class="carousel-inner">
-        <div class="carousel-item active">
-            <img src="{{ "images/header01.webp" | relURL }}" class="d-block w-100" alt="...">
-        </div>
-        <div class="carousel-item">
-            <img src="{{ "images/header02.webp" | relURL }}" class="d-block w-100" alt="...">
-        </div>
-        <div class="carousel-item">
-            <img src="{{ "images/header03.webp" | relURL }}" class="d-block w-100" alt="...">
-        </div>
+        {{ range $i, $item := .Site.Data.header }}
+        {{ $img := resources.Get $item.image }}
+            <div class="carousel-item{{ if eq $i 0 }} active{{ end }}">
+                <img src="{{ $img.RelPermalink }}" class="d-block w-100" alt="...">
+            </div>
+        {{ end }}
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#hero" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
