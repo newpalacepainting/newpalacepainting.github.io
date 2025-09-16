@@ -4,9 +4,13 @@
     <div class="row baguette-gallery">
         {{ range .Site.Data.gallery }}
         <div class="col-md-4 mb-4">
-            <a href="{{ .image | relURL }}" class="baguette-item">
-                <img src="{{ .image | relURL }}" class="gallery-img" alt="{{ .caption }}">
-            </a>
+            {{ $img := resources.Get .image }}
+            {{ with $img }}
+                {{ $thumb := .Crop "300x200 Center" }}
+                <a href="{{ .RelPermalink }}" class="baguette-item">
+                    <img src="{{ $thumb.RelPermalink }}" class="gallery-img">
+                </a>
+            {{ end }}
         </div>
         {{ end }}
     </div>
