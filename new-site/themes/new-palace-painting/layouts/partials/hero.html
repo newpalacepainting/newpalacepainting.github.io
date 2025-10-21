@@ -1,10 +1,21 @@
 <div id="hero" class="carousel slide carousel-fade" data-bs-ride="carousel">
     <div class="carousel-inner">
         {{ range $i, $item := .Site.Data.header }}
-        {{ $img := resources.Get $item.image }}
-            <div class="carousel-item{{ if eq $i 0 }} active{{ end }}">
-                <img src="{{ $img.RelPermalink }}" class="d-block w-100" alt="...">
-            </div>
+        {{ if $item.video }}
+            {{ $video := resources.Get $item.video }}
+                <div class="carousel-item{{ if eq $i 0 }} active{{ end }}">
+                    <video class="d-block w-100" autoplay muted loop playsinline>
+                        <source src="{{ $video.RelPermalink }}" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+        {{ end }}
+        {{ if $item.image }}
+            {{ $img := resources.Get $item.image }}
+                <div class="carousel-item{{ if eq $i 0 }} active{{ end }}">
+                    <img src="{{ $img.RelPermalink }}" class="d-block w-100" alt="...">
+                </div>
+            {{ end }}
         {{ end }}
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#hero" data-bs-slide="prev">
