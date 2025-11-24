@@ -61,8 +61,7 @@ h2 {
 .topvideo {
   position: relative;
   top: -58px;
-}
-.carousel-caption {
+  max-height: 100vh;
 }
 .video-caption {
   background-color: rgba(0, 0, 0, 0.3);
