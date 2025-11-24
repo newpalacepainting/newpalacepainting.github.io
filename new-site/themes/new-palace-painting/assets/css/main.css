@@ -101,6 +101,23 @@ h2 {
   }
 }
 
+
+@media (max-width: 768px) {
+    /* 1. Define the square shape on the container */
+    .topvideo {
+        aspect-ratio: 1 / 1; /* Force container to be square */
+        width: 100%;
+        height: auto; /* Let aspect-ratio calculate the height */
+    }
+
+    /* 2. Force the video to ignore its own ratio and fill the square */
+    .topvideo video {
+        width: 100% !important;
+        height: 100% !important; /* OVERRIDES inline 'height: auto' */
+        object-fit: cover !important; /* Zooms in to fill the square */
+    }
+}
+
 .navbar {
   z-index: 1000;
 }
