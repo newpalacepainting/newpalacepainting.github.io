@@ -1,47 +1,20 @@
-<div id="hero" class="carousel slide carousel-fade" data-bs-ride="carousel">
-    <div class="carousel-inner">
-        {{ range $i, $item := .Site.Data.header }}
-        {{ if $item.video }}
-            {{ $video := resources.Get $item.video }}
-                <div class="carousel-item{{ if eq $i 0 }} active{{ end }}">
-                    <video class="d-block w-100" autoplay muted loop playsinline style="object-fit: cover; aspect-ratio: 2063 / 688; height: auto;">
-                        <source src="{{ $video.RelPermalink }}" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                    {{ if $item.title }}
-                    <div class="carousel-caption d-block" style="background-color: rgba(0, 0, 0, 0.3); padding: 2rem; border-radius: 10px; left: 50%; right: auto; transform: translateX(-50%); max-width: 90%;">
-                        <h1 class="mb-3">{{ $item.title }}</h1>
-                        {{ if $item.description }}
-                        <p class="mb-4">{{ $item.description }}</p>
-                        {{ end }}
-                        <a href="tel:{{ $.Site.Params.contact.phone }}" class="btn btn-outline-light btn-lg" style="border-radius: 28px; font-weight: 500; padding: 12px 32px;">FREE QUOTE</a>
-                    </div>
+{{ range $i, $item := .Site.Data.header }}
+    {{ if $item.video }}
+        {{ $video := resources.Get $item.video }}
+            <div class="topvideo">
+                <video class="d-block w-100" autoplay muted loop playsinline style="object-fit: cover;  height: auto;">
+                    <source src="{{ $video.RelPermalink }}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                {{ if $item.title }}
+                <div class="carousel-caption d-block video-caption">
+                    <h1 class="mb-3">{{ $item.title }}</h1>
+                    {{ if $item.description }}
+                    <p class="mb-4">{{ $item.description }}</p>
                     {{ end }}
+                    <a href="tel:{{ $.Site.Params.contact.phone }}" class="btn btn-outline-light btn-lg" style="border-radius: 28px; font-weight: 500; padding: 12px 32px;">FREE QUOTE</a>
                 </div>
-        {{ end }}
-        {{ if $item.image }}
-            {{ $img := resources.Get $item.image }}
-                <div class="carousel-item{{ if eq $i 0 }} active{{ end }}">
-                    <img src="{{ $img.RelPermalink }}" class="d-block w-100" alt="...">
-                    <div class="carousel-caption d-block" style="background-color: rgba(0, 0, 0, 0.3); padding: 2rem; border-radius: 10px; left: 50%; right: auto; transform: translateX(-50%); max-width: 90%;">
-                        {{ if $item.title }}
-                        <h1 class="mb-3">{{ $item.title }}</h1>
-                        {{ end }}
-                        {{ if $item.description }}
-                        <p class="mb-4">{{ $item.description }}</p>
-                        {{ end }}
-                        <a href="tel:{{ $.Site.Params.contact.phone }}" class="btn btn-outline-light btn-lg" style="border-radius: 28px; font-weight: 500; padding: 12px 32px;">FREE QUOTE</a>
-                    </div>
-                </div>
-            {{ end }}
-        {{ end }}
-    </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#hero" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#hero" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-    </button>
-</div>
+                {{ end }}
+            </div>
+    {{ end }}
+{{ end }}

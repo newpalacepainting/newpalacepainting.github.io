@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-light navbar-expand" style="background-color: transparent;">
     <div class="container">
         <a class="navbar-brand" href="{{ .Site.BaseURL }}">
             <img src="{{ "/images/logo.webp" | relURL }}" alt="New Palace Painting Logo" width="30" height="30" class="" style="top: -3px; position: relative; margin-right:10px;">
@@ -10,19 +10,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="/#about">About</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/#services">Services</a>
-                </li>
-                <li class="nav-item">
-                    <!-- DEBUG: Original anchor link that only works on home page -->
-                    <!-- <a class="nav-link" href="#gallery">Gallery</a> -->
-                    <!-- FIXED: Use proper page URL that works from any page -->
                     <a class="nav-link" href="{{ "/gallery/" | relURL }}">Gallery</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/#contact">Contact</a>
                 </li>
             </ul>
         </div>

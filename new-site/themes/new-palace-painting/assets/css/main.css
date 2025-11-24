@@ -58,3 +58,50 @@ h2 {
   font-size: 3rem;
 
 }
+.topvideo {
+  position: relative;
+  top: -58px;
+}
+.carousel-caption {
+}
+.video-caption {
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 2rem;
+  border-radius: 10px;
+  left: 50%;
+  right: auto;
+  transform: translateX(-50%);
+}
+@media (max-width: 1310px) {
+  .video-caption {
+    padding: 1rem;
+    max-width: 95%;
+    left: 20%;
+    transform: translateX(-10%);
+  }
+
+  .video-caption h1 {
+    font-size: 1.5rem;
+  }
+
+  .video-caption p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .video-caption {
+    position: relative;
+    background-color: rgba(0, 0, 0);
+    transform: none;
+    left: auto;
+    max-width: 100%;
+    bottom: 0;
+    border: none;
+    border-radius: 0;
+  }
+}
+
+.navbar {
+  z-index: 1000;
+}
