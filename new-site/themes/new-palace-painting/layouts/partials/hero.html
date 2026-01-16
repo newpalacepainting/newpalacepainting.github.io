@@ -9,9 +9,11 @@
                 {{ if $item.title }}
                 <div class="carousel-caption d-block video-caption">
                     <h1 class="mb-3">{{ $item.title }}</h1>
+                    <span class="video-description">
                     {{ if $item.description }}
                     <p class="mb-4">{{ $item.description }}</p>
                     {{ end }}
+                    </span>
                     <a href="tel:{{ $.Site.Params.contact.phone }}" class="btn btn-outline-light btn-lg" style="border-radius: 28px; font-weight: 500; padding: 12px 32px;">FREE QUOTE</a>
                 </div>
                 {{ end }}
