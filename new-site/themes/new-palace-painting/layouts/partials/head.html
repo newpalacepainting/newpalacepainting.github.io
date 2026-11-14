@@ -7,7 +7,9 @@
 <meta name="description" content="{{ $desc }}">
 <meta name="theme-color" content="#faf9f7">
 <link rel="canonical" href="{{ .Permalink }}">
-<link rel="icon" href="{{ "favicon.ico" | relURL }}">
+<link rel="icon" href="{{ "favicon.ico" | relURL }}" sizes="any">
+<link rel="icon" href="{{ "favicon.svg" | relURL }}" type="image/svg+xml">
+<link rel="apple-touch-icon" href="{{ "apple-touch-icon.png" | relURL }}">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="{{ site.Title }}">
 <meta property="og:title" content="{{ $title }}">
