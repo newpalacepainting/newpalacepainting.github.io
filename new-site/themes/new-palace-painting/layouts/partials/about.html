@@ -1,14 +1,33 @@
-<div class="row">
-    <div class="col-md-6">
-        <img src="{{ "images/about_us.webp" | relURL }}" class="img-fluid" alt="Owner of New Palace Painting">
+<section id="about" class="section">
+  <div class="container">
+    <div class="row g-5 align-items-center">
+      <div class="col-lg-5">
+        <figure class="about-figure reveal">
+          <img src="{{ "images/about_us.webp" | relURL }}" alt="New Palace Painting owner cutting in a ceiling line" width="1292" height="1292" loading="lazy">
+          <figcaption class="about-badge caption-1">{{ partial "icon.html" "paint-brush" }} Every job is run by the owner</figcaption>
+        </figure>
+      </div>
+      <div class="col-lg-7 about-copy">
+        <h2 class="heading-2 reveal">Local, experienced and <span class="accent">obsessed with detail</span></h2>
+        <p class="body-7 muted reveal" style="--d:1">Owned and operated in Metro Detroit, established in 2020.</p>
+        <p class="body-3 reveal" style="--d:2">Run by the owner, New Palace Painting brings ten years of painting experience to every job. We focus on interior, custom work and pride ourselves on thorough prep, full property protection, and a workmanship warranty that gives homeowners confidence. We serve Oakland County and the greater Metro Detroit area.</p>
+        <ul class="check-list reveal" style="--d:3">
+          <li class="body-2">{{ partial "icon.html" "check" }} Free estimate in person, with a written scope</li>
+          <li class="body-2">{{ partial "icon.html" "check" }} Floors and furniture fully protected</li>
+          <li class="body-2">{{ partial "icon.html" "check" }} Sherwin-Williams paint on every job</li>
+          <li class="body-2">{{ partial "icon.html" "check" }} Final walkthrough and workmanship warranty</li>
+        </ul>
+        <div class="review-links reveal" style="--d:4">
+          <a class="review-link" href="{{ site.Params.reviews.google }}" target="_blank" rel="noopener">
+            {{ partial "icon.html" "google-logo" }}
+            <span><span class="title-3">5.0 on Google</span><span class="caption-2 muted">Read the reviews</span></span>
+          </a>
+          <a class="review-link" href="{{ site.Params.reviews.facebook }}" target="_blank" rel="noopener">
+            {{ partial "icon.html" "facebook-logo" }}
+            <span><span class="title-3">5.0 on Facebook</span><span class="caption-2 muted">Read the reviews</span></span>
+          </a>
+        </div>
+      </div>
     </div>
-    <div class="col-md-6">
-        <h2>About Us</h2>
-        <h3>Local. Experienced. Detail-driven.</h3>
-        <p>Owned and operated in Metro Detroit - 5 years of painting experience, company established 2020.</p>
-        <p>Owner-run New Palace Painting brings ten years of hands-on painting expertise to every job. We focus on interior, custom work and pride ourselves on thorough prep, full property protection, and a workmanship warranty that gives homeowners confidence. We serve Oakland County and the greater Metro Detroit area.</p>
-        <p><a href="https://g.page/r/CcTz9p8J0NZkEAI/review" target="_blank"><img src="/images/google-review.webp" alt="Google 5-star review" style="height: 150px; vertical-align: middle;"> Rated 5.0 on Google Reviews</a></p>
-        <p><a href="https://www.facebook.com/profile.php?id=61554790547196&sk=reviews" target="_blank"><img src="/images/facebook-review.webp" alt="Facebook 5-star review" style="height: 150px; vertical-align: middle;"> Rated 5.0 on Facebook Reviews</a></p>
-
-    </div>
-</div>
+  </div>
+</section>

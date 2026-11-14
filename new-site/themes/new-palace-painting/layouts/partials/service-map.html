@@ -1,0 +1,33 @@
+{{- $c := site.Params.contact -}}
+<section id="service-area" class="section map-section">
+  <div class="map-pin" data-map-pin>
+    <div class="map-sticky">
+      <div class="container">
+        <div class="row g-5 align-items-center">
+          <div class="col-lg-5 map-copy">
+            <h2 class="heading-2 reveal">Painting our way across <span class="accent">Metro Detroit</span></h2>
+            <p class="body-7 muted reveal" style="--d:1">Based in Oakland County, we bring free estimates in person to homes and businesses throughout Oakland, Macomb and Wayne counties.</p>
+
+            <div class="map-counter reveal" style="--d:2">
+              <strong class="heading-1" data-map-count>0</strong>
+              <span class="body-6 muted">communities across<br>Oakland, Macomb and Wayne</span>
+            </div>
+
+            <ul class="map-areas reveal" style="--d:3">
+              {{- range $i, $a := $c.serviceAreas }}
+              <li class="caption-1" data-map-area data-at="{{ div (mul $i 0.85) (sub (len $c.serviceAreas) 1) }}">{{ partial "icon.html" "check" }} {{ $a }}</li>
+              {{- end }}
+            </ul>
+          </div>
+          <div class="col-lg-7">
+          <figure class="map-frame reveal" data-map>
+            {{- $tex := resources.Get "maps/paint-texture.webp" | fingerprint }}
+            {{- with resources.Get "maps/service-map.svg" }}{{ replace .Content "__PAINT_TEXTURE__" $tex.RelPermalink | safeHTML }}{{ end }}
+            <figcaption class="caption-5 muted">Municipal boundaries: U.S. Census Bureau</figcaption>
+          </figure>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

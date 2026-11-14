@@ -1,0 +1,38 @@
+{{- $c := site.Params.contact -}}
+{{- $faq := slice
+  (dict "q" "Which areas do you serve?" "a" (printf "Oakland County and the greater Metro Detroit area, including %s. If you are nearby and not sure, ask; we travel throughout Metro Detroit." (delimit (after 1 (first 4 $c.serviceAreas)) ", " " and ")))
+  (dict "q" "Is the estimate really free?" "a" "Yes. We visit in person, walk the space with you and send a written scope of work and a personal timeline, with no obligation.")
+  (dict "q" "What paint do you use?" "a" "Sherwin-Williams on every job. We match sheen and formula to each room, from low VOC options for occupied homes to tougher finishes for high traffic areas.")
+  (dict "q" "How do you protect my home while you work?" "a" "Floors and furniture are covered before any work starts. We repair and prime surfaces, and finish with a careful cleanup so the room is ready to use.")
+  (dict "q" "Is your work guaranteed?" "a" "Every job includes a workmanship warranty. If an issue falls under our responsibility, we come back and fix it. We also do a final walkthrough with you before we call a job done.")
+  (dict "q" "Can you help me choose colors?" "a" "Yes. We give practical color guidance that considers your natural light, furnishings and flow, and can work with Sherwin-Williams resources to settle on a palette.")
+  (dict "q" "Do you do more than interior walls?" "a" "We also paint exteriors, refinish cabinets, repair drywall, apply epoxy floor coatings and power wash.")
+  (dict "q" "Do you take commercial projects?" "a" "Yes. We work with homeowners and businesses across Metro Detroit.")
+-}}
+<section id="faq" class="section section-tint">
+  <div class="container">
+    <div class="row g-5">
+      <div class="col-lg-4">
+        <div class="faq-intro">
+          <h2 class="heading-2 reveal">Questions homeowners ask before booking</h2>
+          <p class="body-3 muted reveal" style="--d:1">Something else on your mind? Call <a class="text-link" href="{{ partial "func/tel.html" . }}">{{ $c.phone }}</a> or email <a class="text-link" href="mailto:{{ $c.email }}">{{ $c.email }}</a>.</p>
+        </div>
+      </div>
+      <div class="col-lg-8">
+        <dl class="row g-4 gy-5">
+          {{- range $i, $f := $faq }}
+          <div class="col-md-6 faq-item reveal" style="--d:{{ mod $i 2 }}">
+            <dt class="title-2">{{ $f.q }}</dt>
+            <dd class="body-6 muted">{{ $f.a }}</dd>
+          </div>
+          {{- end }}
+        </dl>
+      </div>
+    </div>
+  </div>
+  <script type="application/ld+json">
+  {{- $entities := slice }}
+  {{- range $faq }}{{ $entities = $entities | append (dict "@type" "Question" "name" .q "acceptedAnswer" (dict "@type" "Answer" "text" .a)) }}{{ end }}
+  {{- dict "@context" "https://schema.org" "@type" "FAQPage" "mainEntity" $entities | jsonify | safeJS }}
+  </script>
+</section>

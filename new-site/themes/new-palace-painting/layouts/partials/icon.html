@@ -1,0 +1,8 @@
+{{- /*
+Inline SVG icon from assets/icons (Bootstrap Icons, MIT).
+@context {string} . Icon name, e.g. "telephone-fill".
+*/ -}}
+{{- with resources.Get (printf "icons/%s.svg" .) -}}
+  {{- $svg := replaceRE `\s(width|height|class)="[^"]*"` "" .Content -}}
+  {{- replace $svg "<svg " `<svg class="icon" aria-hidden="true" focusable="false" ` | safeHTML -}}
+{{- end -}}

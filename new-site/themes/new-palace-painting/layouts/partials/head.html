@@ -1,5 +1,38 @@
+{{- $desc := or .Description site.Params.description -}}
+{{- $title := cond .IsHome (printf "%s | %s" site.Title site.Params.tagline) (printf "%s | %s" .Title site.Title) -}}
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width">
-<title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ printf "%s | %s" .Title site.Title }}{{ end }}</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>document.documentElement.classList.add("js")</script>
+<title>{{ $title }}</title>
+<meta name="description" content="{{ $desc }}">
+<meta name="theme-color" content="#faf9f7">
+<link rel="canonical" href="{{ .Permalink }}">
+<link rel="icon" href="{{ "favicon.ico" | relURL }}">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="{{ site.Title }}">
+<meta property="og:title" content="{{ $title }}">
+<meta property="og:description" content="{{ $desc }}">
+<meta property="og:url" content="{{ .Permalink }}">
+{{- with resources.Get "header/npp-poster.jpg" }}
+  {{- with .Resize "1200x jpg q80" }}
+<meta property="og:image" content="{{ .Permalink }}">
+  {{- end }}
+{{- end }}
 {{ partialCached "head/css.html" . }}
-{{ partialCached "head/js.html" . }}
+{{- with site.Params.contact }}
+<script type="application/ld+json">
+{{- dict
+  "@context" "https://schema.org"
+  "@type" "HousePainter"
+  "name" site.Title
+  "url" site.BaseURL
+  "telephone" .phone
+  "email" .email
+  "description" site.Params.description
+  "foundingDate" "2020"
+  "areaServed" (slice "Oakland County, MI" "Metro Detroit, MI")
+  "address" (dict "@type" "PostalAddress" "streetAddress" .street "addressLocality" .city "addressRegion" .region "addressCountry" "US")
+  "sameAs" (slice site.Params.social.facebook)
+  | jsonify | safeJS }}
+</script>
+{{- end }}

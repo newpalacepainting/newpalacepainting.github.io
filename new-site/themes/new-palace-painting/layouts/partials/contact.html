@@ -1,13 +1,57 @@
-<h2>Contact Us</h2>
-<div class="row">
-    <div class="col-md-12">
-        <h3>Get a Free Estimate</h3>
-        <p>Serving Oakland County & Metro Detroit. Free in-person estimates across Oakland County, Bloomfield, Troy, Rochester Hills and nearby communities.</p>
-        <p>Based in Oakland County, New Palace Painting travels throughout Metro Detroit for interior projects. Contact us today to schedule a free, no-obligation estimate and get a personal timeline and written scope of work.</p>
-        <ul>
-            <li>Email: <a href="mailto:{{ .Site.Params.contact.email }}">{{ .Site.Params.contact.email }}</a></li>
-            <li>Phone: <a href="tel:{{ .Site.Params.contact.phone }}">{{ .Site.Params.contact.phone }}</a></li>
-            <li>Address: {{ .Site.Params.contact.address }}</li>
-        </ul>
+{{- $c := site.Params.contact -}}
+{{- $tel := partial "func/tel.html" . -}}
+<section class="cta-band" aria-label="Free estimate">
+  <div class="container cta-inner reveal">
+    <div>
+      <h2 class="heading-3">Ready for a fresh finish?</h2>
+      <p class="body-7">Book a free estimate. We walk the space with you, then send a written scope and timeline with no obligation.</p>
     </div>
-</div>
+    <div class="cta-actions">
+      <a class="button button-light button-lg" href="#contact">Get a free estimate {{ partial "icon.html" "arrow-right" }}</a>
+      <a class="text-link-light button-md" href="{{ $tel }}">{{ partial "icon.html" "phone" }} {{ $c.phone }}</a>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="section">
+  <div class="container">
+    <div class="row g-5 align-items-start">
+      <div class="col-lg-6 contact-copy">
+        <h2 class="heading-2 reveal">Get your free estimate</h2>
+        <p class="body-7 muted reveal" style="--d:1">Serving Oakland County and Metro Detroit.</p>
+        <p class="body-3 reveal" style="--d:2">Call or email with a few words about the project. We’ll set up a visit, walk the space with you and follow up with a written scope of work and a personal timeline.</p>
+        {{- if not .IsHome }}{{/* the home page shows these on the service-area map instead */}}
+        <p class="area-label title-4 reveal" style="--d:3">{{ partial "icon.html" "map-pin" }} Areas we serve</p>
+        <ul class="area-tags reveal" style="--d:3">
+          {{- range $c.serviceAreas }}<li class="caption-1">{{ . }}</li>{{ end }}
+          <li class="caption-1">Nearby communities</li>
+        </ul>
+        {{- end }}
+      </div>
+      <div class="col-lg-6">
+      <div class="contact-panel reveal">
+        <a class="contact-row" href="{{ $tel }}">
+          <span class="contact-icon">{{ partial "icon.html" "phone" }}</span>
+          <span><span class="caption-2 muted">Call us</span><span class="title-2">{{ $c.phone }}</span></span>
+          {{ partial "icon.html" "arrow-right" }}
+        </a>
+        <a class="contact-row" href="mailto:{{ $c.email }}?subject=Free%20estimate%20request">
+          <span class="contact-icon">{{ partial "icon.html" "envelope-simple" }}</span>
+          <span><span class="caption-2 muted">Email</span><span class="title-2">{{ $c.email }}</span></span>
+          {{ partial "icon.html" "arrow-right" }}
+        </a>
+        <a class="contact-row" href="https://www.google.com/maps/search/?api=1&amp;query={{ printf "%s, %s, %s" $c.street $c.city $c.region | urlquery }}" target="_blank" rel="noopener">
+          <span class="contact-icon">{{ partial "icon.html" "map-pin" }}</span>
+          <span><span class="caption-2 muted">Address</span><span class="title-2">{{ $c.street }}, {{ $c.city }}, {{ $c.region }}</span></span>
+          {{ partial "icon.html" "arrow-up-right" }}
+        </a>
+        <a class="contact-row" href="{{ site.Params.social.facebook }}" target="_blank" rel="noopener">
+          <span class="contact-icon">{{ partial "icon.html" "facebook-logo" }}</span>
+          <span><span class="caption-2 muted">See recent jobs</span><span class="title-2">Facebook</span></span>
+          {{ partial "icon.html" "arrow-up-right" }}
+        </a>
+      </div>
+      </div>
+    </div>
+  </div>
+</section>

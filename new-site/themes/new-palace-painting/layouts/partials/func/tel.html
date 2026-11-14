@@ -1,0 +1,2 @@
+{{- /* Returns the configured phone number as an E.164 tel: href. */ -}}
+{{- return printf "tel:+1%s" (replaceRE `[^0-9]` "" site.Params.contact.phone) -}}

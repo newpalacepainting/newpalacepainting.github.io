@@ -1,16 +1,55 @@
-<h2>Our Process</h2>
-<div class="row">
-    <div class="col-md-12">
-        <p>Estimate → Prep → Paint → Clean → Warranty</p>
-        <p>Transparent timeline and careful protection from day one to the final walkthrough.</p>
-        <p>Every project begins with a free, in-person estimate and a clear scope of work. We protect floors and furniture, repair and prime surfaces, apply the right Sherwin-Williams products and finish with a meticulous clean and walkthrough. We stand behind our work with a workmanship warranty for your peace of mind.</p>
-
-        <h3>Our Promise & Warranty</h3>
-        <p>We stand behind our work with a clear, honest warranty and final walkthrough.</p>
-        <p>Every job includes a workmanship warranty so you know we’ll return to address any issues that fall under our responsibility. We complete a final walkthrough with you to ensure the result meets your expectations.</p>
-
-        <h3>Quality Materials</h3>
-        <p>We use Sherwin-Williams premium paints.</p>
-        <p>We specify Sherwin-Williams products because they offer excellent coverage, durability and color consistency. We match sheen and formulas to each room’s needs — from low-VOC options for occupied homes to tougher finishes for high-traffic areas.</p>
+{{- $steps := slice
+  (dict "icon" "clipboard-text" "title" "Estimate" "text" "Free visit in person, a written scope of work and a personal timeline.")
+  (dict "icon" "house" "title" "Prep" "text" "Floors and furniture protected; surfaces repaired, sanded and primed.")
+  (dict "icon" "paint-roller" "title" "Paint" "text" "The right Sherwin-Williams product and sheen for every room.")
+  (dict "icon" "sparkle" "title" "Clean" "text" "A careful cleanup so your home is ready to enjoy right away.")
+  (dict "icon" "shield-check" "title" "Warranty" "text" "Final walkthrough together, backed by our workmanship warranty.")
+-}}
+<section id="process" class="section section-tint process-section">
+  <div class="process-pin" data-process-pin>
+  <div class="process-sticky">
+  <div class="container">
+    <div class="section-head">
+      <h2 class="heading-2 reveal">A clear process from first visit to final walkthrough</h2>
+      <p class="body-7 muted reveal" style="--d:1">A transparent timeline and careful protection from day one.</p>
     </div>
-</div>
+
+    <div class="process" data-process>
+    <div class="process-line" aria-hidden="true"><span></span></div>
+    <ol class="process-steps">
+      {{- range $i, $s := $steps }}
+      <li class="process-step reveal" style="--d:{{ $i }}">
+        <span class="process-icon">{{ partial "icon.html" $s.icon }}<span class="process-num caption-3">{{ add $i 1 }}</span></span>
+        <h3 class="heading-6">{{ $s.title }}</h3>
+        <p class="body-6 muted">{{ $s.text }}</p>
+      </li>
+      {{- end }}
+    </ol>
+    </div>
+  </div>
+  </div>
+  </div>
+
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-lg-7">
+        <article class="promise reveal">
+          {{ partial "icon.html" "shield-check" }}
+          <div>
+            <h3 class="heading-5">Our promise and warranty</h3>
+            <p class="body-3 muted">Every job includes a workmanship warranty, so you know we’ll return to address any issues that fall under our responsibility. We finish with a walkthrough together to make sure the result meets your expectations.</p>
+          </div>
+        </article>
+      </div>
+      <div class="col-lg-5">
+        <article class="promise reveal" style="--d:1">
+          {{ partial "icon.html" "drop-half" }}
+          <div>
+            <h3 class="heading-5">Sherwin-Williams paint</h3>
+            <p class="body-3 muted">We specify Sherwin-Williams products for coverage, durability and color consistency, matching sheen and formula to each room: low VOC options for occupied homes, tougher finishes for high traffic areas.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,14 @@
+{{ define "main" }}
+<section class="not-found">
+  <div class="container">
+    <p class="caption-3 muted">Error 404</p>
+    <h1 class="heading-2">This wall hasn’t been painted yet</h1>
+    <p class="body-7 muted">The page you were looking for isn’t here. It may have moved, or the link may be mistyped.</p>
+    <div class="not-found-actions">
+      <a class="button button-primary button-md" href="{{ "/" | relURL }}">Back to the home page</a>
+      <a class="text-link button-md" href="{{ "/gallery/" | relURL }}">See our recent work {{ partial "icon.html" "arrow-right" }}</a>
+      <a class="text-link button-md" href="{{ partial "func/tel.html" . }}">{{ partial "icon.html" "phone" }} {{ site.Params.contact.phone }}</a>
+    </div>
+  </div>
+</section>
+{{ end }}

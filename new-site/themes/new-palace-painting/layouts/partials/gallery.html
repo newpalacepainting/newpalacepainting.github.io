@@ -1,17 +1,20 @@
-<h2>Gallery</h2>
-<div class="row baguette-gallery">
-        {{ range .Site.Data.frontpagegallery }}
-        <div class="col-md-4 mb-4">
-            {{ $img := resources.Get .image }}
-            {{ with $img }}
-                {{ $thumb := .Fill "300x300 Center" }}
-                <a href="{{ .RelPermalink }}" class="baguette-item">
-                    <img src="{{ $thumb.RelPermalink }}" class="gallery-img" style="height: 300px">
-                </a>
-            {{ end }}
-        </div>
-        {{ end }}
-</div>
-<div class="text-end mt-3">
-    <a href="/gallery" class="btn btn-secondary">View Full Gallery</a>
-</div>
+<section id="gallery" class="section">
+  <div class="container">
+    <div class="section-head section-head-split">
+      <h2 class="heading-2 reveal">Recent work around Metro Detroit</h2>
+      <a class="text-link button-md reveal" style="--d:1" href="{{ "gallery/" | relURL }}">See all {{ len site.Data.gallery }} project photos {{ partial "icon.html" "arrow-right" }}</a>
+    </div>
+    <div class="bento baguette-gallery">
+      {{- range $i, $g := site.Data.frontpagegallery }}
+        {{- with resources.Get $g.image }}
+          {{- $thumb := .Fill (cond (eq $i 0) "900x900 Center webp q78" "600x600 Center webp q78") }}
+          {{- $full := .Resize "1800x webp q82" }}
+      <a class="bento-item{{ if eq $i 0 }} bento-lg{{ end }} reveal" style="--d:{{ mod $i 3 }}" href="{{ $full.RelPermalink }}" aria-label="Enlarge project photo {{ add $i 1 }}">
+        <img src="{{ $thumb.RelPermalink }}" alt="Painting project {{ add $i 1 }} by New Palace Painting" width="{{ $thumb.Width }}" height="{{ $thumb.Height }}" loading="lazy">
+        <span class="zoom-hint">{{ partial "icon.html" "magnifying-glass-plus" }}</span>
+      </a>
+        {{- end }}
+      {{- end }}
+    </div>
+  </div>
+</section>

@@ -1,18 +1,21 @@
-<nav class="navbar navbar-light navbar-expand" style="background-color: transparent;">
-    <div class="container">
-        <a class="navbar-brand" href="{{ .Site.BaseURL }}">
-            <img src="{{ "/images/logo.webp" | relURL }}" alt="New Palace Painting Logo" width="30" height="30" class="" style="top: -3px; position: relative; margin-right:10px;">
-            {{ .Site.Title }}
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ "/gallery/" | relURL }}">Gallery</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</nav>
+<header class="site-header" data-header>
+  <nav class="nav-bar" aria-label="Main">
+    <a class="brand" href="{{ "/" | relURL }}">
+      <span class="brand-mark">{{ partial "logo-mark.html" . }}</span>
+      <span class="brand-name">{{ site.Title }}</span>
+    </a>
+
+    <ul class="nav-links" id="site-menu" data-nav-menu>
+      {{- range $i, $m := site.Menus.main }}
+      <li style="--i:{{ $i }}"><a class="nav-link-item{{ if $.IsMenuCurrent $m.Menu $m }} is-active{{ end }}" href="{{ $m.URL }}"{{ if $.IsMenuCurrent $m.Menu $m }} aria-current="page"{{ end }}>{{ $m.Name }}</a></li>
+      {{- end }}
+      <li class="nav-menu-cta" style="--i:{{ len site.Menus.main }}"><a class="button button-primary button-md" href="{{ "/#contact" | relURL }}">Get a free estimate</a></li>
+    </ul>
+
+    <a class="button button-primary button-sm nav-cta" href="{{ "/#contact" | relURL }}">Free estimate</a>
+
+    <button class="nav-toggle" type="button" aria-controls="site-menu" aria-expanded="false" aria-label="Open menu" data-nav-toggle>
+      <span></span><span></span>
+    </button>
+  </nav>
+</header>

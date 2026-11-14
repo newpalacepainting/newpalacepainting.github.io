@@ -1,0 +1,25 @@
+{{- /* Tagline reveal: words light up one by one, and a rainbow brush stroke is painted across, while the
+       section is pinned on large screens (see main.js). */ -}}
+{{- $line1 := "We treat every home as if it were our own," -}}
+{{- $line2 := "from the first drop cloth to the final walkthrough." -}}
+<section class="tagline" aria-label="Our approach" data-tagline>
+  <div class="tagline-pin" data-tagline-pin>
+    <div class="tagline-sticky">
+      <div class="container">
+        <p class="tagline-text heading-2">
+          {{- range $l, $line := slice $line1 $line2 }}
+          <span class="tagline-line">{{ range split $line " " }}<span class="tw">{{ . }}</span> {{ end }}</span>
+          {{- end }}
+        </p>
+        {{- with resources.Get "images/rainbow-stroke.webp" }}
+          {{- $sm := .Resize "960x webp q80" }}
+          {{- $lg := .Resize "1920x webp q80" }}
+        <div class="stroke" aria-hidden="true">
+          <img src="{{ $lg.RelPermalink }}" srcset="{{ $sm.RelPermalink }} 960w, {{ $lg.RelPermalink }} 1920w" sizes="100vw" width="{{ $lg.Width }}" height="{{ $lg.Height }}" alt="" loading="lazy" decoding="async">
+          <span class="stroke-cover"></span>
+        </div>
+        {{- end }}
+      </div>
+    </div>
+  </div>
+</section>

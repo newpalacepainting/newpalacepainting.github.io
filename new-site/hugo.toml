@@ -1,24 +1,47 @@
-baseURL = 'https://example.org/'
+baseURL = 'https://newpalacepainting.com/'
 languageCode = 'en-us'
 title = 'New Palace Painting'
 theme = 'new-palace-painting'
 
 [params]
   author = "New Palace Painting"
+  tagline = "Interior & Exterior Painters in Metro Detroit"
   description = "Custom interior painting across Oakland County & Metro Detroit — precision, protection, and Sherwin-Williams quality."
   [params.contact]
     email = "newpalacepainting@gmail.com"
     phone = "(248) 216-3355"
-    address = "1600 clay street, Detroit, MI, United States, Michigan"
+    street = "1600 Clay Street"
+    city = "Detroit"
+    region = "MI"
+    serviceAreas = ["Oakland County", "Bloomfield", "Troy", "Rochester Hills", "Metro Detroit"]
+  [params.reviews]
+    google = "https://g.page/r/CcTz9p8J0NZkEAI/review"
+    facebook = "https://www.facebook.com/profile.php?id=61554790547196&sk=reviews"
   [params.social]
     facebook = "https://www.facebook.com/profile.php?id=61554790547196"
 
 [menus]
   [[menus.main]]
-    name = "Home"
-    pageRef = "/"
+    name = "About"
+    url = "/#about"
     weight = 10
+  [[menus.main]]
+    name = "Services"
+    url = "/#services"
+    weight = 20
+  [[menus.main]]
+    name = "Process"
+    url = "/#process"
+    weight = 30
   [[menus.main]]
     name = "Gallery"
     pageRef = "/gallery"
-    weight = 20
+    weight = 40
+  [[menus.main]]
+    name = "Reviews"
+    url = "/#reviews"
+    weight = 50
+  [[menus.main]]
+    name = "Contact"
+    url = "/#contact"
+    weight = 60

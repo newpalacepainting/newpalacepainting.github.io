@@ -1,22 +1,30 @@
-{{ range $i, $item := .Site.Data.header }}
-    {{ if $item.video }}
-        {{ $video := resources.Get $item.video }}
-            <div class="topvideo">
-                <video class="d-block w-100" autoplay muted loop playsinline style="object-fit: cover;  height: auto;">
-                    <source src="{{ $video.RelPermalink }}" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-                {{ if $item.title }}
-                <div class="carousel-caption d-block video-caption">
-                    <h1 class="mb-3">{{ $item.title }}</h1>
-                    <span class="video-description">
-                    {{ if $item.description }}
-                    <p class="mb-4">{{ $item.description }}</p>
-                    {{ end }}
-                    </span>
-                    <a href="tel:{{ $.Site.Params.contact.phone }}" class="btn btn-outline-light btn-lg" style="border-radius: 28px; font-weight: 500; padding: 12px 32px;">FREE QUOTE</a>
-                </div>
-                {{ end }}
-            </div>
-    {{ end }}
-{{ end }}
+{{- $tel := partial "func/tel.html" . }}
+{{- with index (where site.Data.header "video" "ne" nil) 0 }}
+  {{- $video := resources.Get .video }}
+  {{- $poster := "" }}
+  {{- with .poster }}{{ with resources.Get . }}{{ $poster = (.Resize "1600x webp q75").RelPermalink }}{{ end }}{{ end }}
+<section class="hero" aria-label="Introduction">
+  <div class="hero-media" data-parallax>
+    <video autoplay muted loop playsinline preload="metadata"{{ with $poster }} poster="{{ . }}"{{ end }}>
+      <source src="{{ $video.RelPermalink }}" type="video/mp4">
+    </video>
+  </div>
+  <div class="hero-shade" aria-hidden="true"></div>
+
+  <div class="container hero-content">
+    <div class="hero-copy">
+      {{- with .eyebrow }}<p class="hero-kicker caption-1 reveal">{{ . }}</p>{{ end }}
+      <h1 class="hero-title heading-1 reveal" style="--d:1">{{ .title }}</h1>
+      {{- with .description }}<p class="hero-lead body-7 reveal" style="--d:2">{{ . }}</p>{{ end }}
+      <div class="hero-actions reveal" style="--d:3">
+        <a class="button button-light button-lg" href="#contact">Get a free estimate {{ partial "icon.html" "arrow-right" }}</a>
+        <a class="text-link-light button-md" href="{{ $tel }}">{{ partial "icon.html" "phone" }} or call {{ site.Params.contact.phone }}</a>
+      </div>
+      <a class="hero-proof caption-1 reveal" style="--d:4" href="{{ site.Params.reviews.google }}" target="_blank" rel="noopener">
+        <span class="stars" aria-hidden="true">{{ range 5 }}{{ partial "icon.html" "star-fill" }}{{ end }}</span>
+        Rated 5.0 by homeowners on Google and Facebook
+      </a>
+    </div>
+  </div>
+</section>
+{{- end }}
